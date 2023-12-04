@@ -2,4 +2,5 @@
 *.log
 package-lock.json
 package.json
+/environment
 ```
