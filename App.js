@@ -20,6 +20,7 @@ app.use((req, res, next) => {
     next();
 });
 
+
 mongoose.connect(DB).then(() => {
     console.log('Connected to MongoDB with Success !');
 }).catch((err) => {
@@ -27,7 +28,14 @@ mongoose.connect(DB).then(() => {
 });
 
 
+
 app.use(bodyParser.json());
+// app.get('/api/externalData', async (res, req) => {
+//     const response = await fetch('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=French%20Ligue%201');
+//     const data = await response.json();
+//     console.log(data);
+//     res.json(data);
+// });
 //ROUTES
 const apiRoutes = require('./routes/api');
 const scoreFootRoutes = require('./routes/Score');
