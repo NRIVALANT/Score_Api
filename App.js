@@ -9,7 +9,7 @@ app.use(compression());
 
 const db_Id = ENV.DB_ID;
 const DB_pw = ENV.DB_PASSWORD;
-const DB = 'mongodb+srv://' + db_Id + ':' + DB_pw + '@api-test.yblbghu.mongodb.net/';
+const DB = 'mongodb+srv://NicolasRivalant:Nicol%40s2002@cluster0.hzai0cu.mongodb.net/';
 
 
 // Passby CORS errors
@@ -28,12 +28,12 @@ mongoose.connect(DB).then(() => {
 
 
 app.use(bodyParser.json());
-// ROUTES
-// const apiRoutes = require('./routes/api');
-// const pokemonRoutes = require('./routes/pokemon');
-// const userRoutes = require('./routes/user');
-// app.use('/api/', apiRoutes);
-// app.use('/api/pokemons/', pokemonRoutes);
-// app.use('/api/users/', userRoutes);
+//ROUTES
+const apiRoutes = require('./routes/api');
+const scoreFootRoutes = require('./routes/Score');
+const userRoutes = require('./routes/user');
+app.use('/api/', apiRoutes);
+app.use('/api/scoreFoot/', scoreFootRoutes);
+app.use('/api/users/', userRoutes);
 
 module.exports = app;

@@ -1,8 +1,10 @@
-const env = {
-    PORT : 3000,
-    DB_ID : 'nicolasrivalant',
-    DB_PASSWORD : 'Nicol@s2002',
- 
-};
+// environment/environment.js
 
-module.exports = env;
+const ENV = {
+    PORT: process.env.PORT || 3000,
+    db_Name : 'cluster0',
+    // Ajoutez d'autres configurations si nécessaire
+  };
+  
+  module.exports = ENV;
+  
