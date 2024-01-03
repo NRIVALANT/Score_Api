@@ -3,7 +3,7 @@
 const ENV = {
     PORT: process.env.PORT || 3000,
     db_Name : 'cluster0',
-    // Ajoutez d'autres configurations si nécessaire
+    RANDOM_TOKEN_SECRET : 'ABC',
   };
   
   module.exports = ENV;

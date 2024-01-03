@@ -46,8 +46,11 @@ exports.createUser = (req, res) => {
 exports.login = (req, res) => {
     User.findOne({ email: req.body.email })
         .then((user) => {
+            console.log(user);
+            console.log(req.body)
             bcrpyt.compare(req.body.password, user.password)
                 .then((valid) => {
+                    console.log(valid);
                     if (valid) {
                         const token = jwt.sign({ user: user }, ENV.RANDOM_TOKEN_SECRET, { expiresIn: '24h' });
                         res.status(200).json({ token: token });
